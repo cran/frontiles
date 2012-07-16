@@ -1,0 +1,7 @@
+useDynLib(frontiles)
+
+import(methods)
+import(sp)
+import(rgl)
+
+export(alphascore, ordermscore, ROCscore, alphafrontier.2d)

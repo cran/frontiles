@@ -1,0 +1,102 @@
+%\VignetteIndexEntry{Package Frontiles}
+%\VignetteDepends{}
+%\VignetteKeywords{multivariate}
+%\VignettePackage{fontiles}
+\documentclass[a4paper]{article}
+\usepackage{Sweave}
+\usepackage{times}
+\usepackage{mathptm}
+\usepackage{hyperref}
+\usepackage{natbib}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\newcommand{\strong}[1]{{\normalfont\fontseries{b}\selectfont #1}}
+\let\pkg=\strong
+\RequirePackage{alltt}
+\newenvironment{example}{\begin{alltt}}{\end{alltt}}
+\newenvironment{smallexample}{\begin{alltt}\small}{\end{alltt}}
+\newcommand{\code}[1]{\texttt{\small #1}}
+\def\RR{\textsf{R}\/}
+
+
+\title{Package Frontiles}
+\author{Abdelaati Daouia\footnote{daouia@cict.fr}, Thibault Laurent\footnote{thibault.laurent@univ-tlse1.fr} \cr
+{\normalsize Toulouse School of Economics}}
+\begin{document}
+\maketitle
+
+<<echo=FALSE>>=
+owidth <- getOption("width")
+options("width"=70)
+ow <- getOption("warn")
+options("warn"=-1)
+.PngNo <- 0
+@
+
+
+<<label=bfig,echo=FALSE,eval=FALSE>>=
+.PngNo <- .PngNo + 1; file <- paste("Fig-bitmap-", .PngNo, ".pdf", sep="")
+pdf(file=file, width = 7, height = 7, pointsize = 18, bg = "white")
+@
+
+<<label=bfig2,echo=FALSE,eval=FALSE>>=
+.PngNo <- .PngNo + 1; file <- paste("Fig-bitmap-", .PngNo, ".pdf", sep="")
+pdf(file=file, width = 7, height = 7, pointsize = 14, bg = "white")
+@
+
+<<label=zfig,echo=FALSE,eval=FALSE>>=
+dev.null <- dev.off()
+cat("\\includegraphics[width=0.65\\textwidth]{", file, "}\n\n", sep="")
+@
+
+<<label=zfig2,echo=FALSE,eval=FALSE>>=
+dev.null <- dev.off()
+cat("\\includegraphics[width=0.65\\textwidth]{", file, "}\n\n", sep="")
+@
+
+For our illustrations, we consider a univariate data set with one input and one output, reported
+by Cazals, Florens and Simar (2002) on the delivery activity of the postal services in France. 
+The original data set contains information about 9521 post offices $(X_i,Y_i)$ oberved 
+in 1994, with $X_i$ being the labor cost (measured by the quantity of labor which represents
+more than $80\%$ of the total cost of the delivery activity) and the output $Y_i$ is defined 
+as the volume of delivered mail (in number of objects). Here, we restrict our illustration to 
+the $n_1=4000$ sample points with the smallest inputs $X_i$.
+<<>>=
+library(frontiles)
+data(burposte)
+smallest<-sort(burposte$xinput,index.return=TRUE)$ix[1:4000]
+sample.burposte<-burposte[1:9521%in%smallest,]
+@
+We represent here the scatter plot of the sample firms, where \code{xtab} is
+the vector of input and \code{ytab} the vector of output: 
+
+<<label=plot1,fig=FALSE,echo=FALSE,eval=FALSE>>=
+xtab<-sample.burposte$xinput
+ytab<-sample.burposte$yprod
+plot(ytab~xtab, pch=16,col='blue2')
+@
+
+\begin{figure}[htbp]
+\begin{center}
+<<results=tex,echo=FALSE>>=
+<<bfig>>
+<<plot1>>
+<<zfig>>
+@
+\end{center}
+\caption{Representation of the sample points}
+\end{figure}
+
+
+
+\section*{References}
+
+\begin{description}
+\bibitem[\protect\citeauthoryear{Daouia and Simar}{Daouia and Simar}{2007}]{daouia:2007}
+Daouia, A., Simar, L. 2007.
+\newblock {Nonparametric efficiency analysis: A multivariate conditional quantile approach}.
+\newblock {Journal of Econometrics 140}
+\newblock 375-400.
+\end{description}
+
+\end{document}
