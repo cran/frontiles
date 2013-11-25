@@ -11,6 +11,7 @@ function(xobs, yobs, type="output", alpha=0.95, add=FALSE, confidence=FALSE, sha
  if(type=="hyper")
   {confidence=FALSE
    shade=FALSE}
+   
 # Representation of the alpha quantile efficiency frontier 
   # 1- Computation of the alpha-quantile score
   res1<-alphascore(xobs,yobs, alpha=alpha)  # score computed on (xobs,yobs)
@@ -23,7 +24,7 @@ function(xobs, yobs, type="output", alpha=0.95, add=FALSE, confidence=FALSE, sha
      bound<-par()$usr}
 
     # If the options type="input" and "confidence" a new graph is automatically
-    # generated inversing the input and and the outpur on the y-axis and x-axis 
+    # generated inversing the input and and the output on the y-axis and x-axis 
       if(type=="input" & confidence)
      {plot(yobs,xobs)}    
      
@@ -107,7 +108,7 @@ function(xobs, yobs, type="output", alpha=0.95, add=FALSE, confidence=FALSE, sha
    }
    
    
-  # 3- Representation of the FDH
+  # 3- Representation of the alpha-quantile frontier
 #  plot(xobs,yobs,type="n")
     if(confidence)
       {if(shade) polygon(c(x.Low,rev(x.Upp)), c(y.Upp,rev(y.Low)),col='lightgrey',border='lightgrey')

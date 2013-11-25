@@ -15,8 +15,8 @@ work was supported by the agence nationale de la recherche through the EPI proje
 \tabular{ll}{
 Package: \tab frontiles\cr
 Type: \tab Package\cr
-Version: \tab 1.1\cr
-Date: \tab 2012-07-16\cr
+Version: \tab 1.2\cr
+Date: \tab 2013-11-25\cr
 License: \tab GPL Vesion 2 or later\cr
 LazyLoad: \tab yes\cr
 }

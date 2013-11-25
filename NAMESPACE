@@ -1,7 +1,9 @@
 useDynLib(frontiles)
 
+import(classInt)
+import(colorspace)
 import(methods)
-import(sp)
 import(rgl)
+import(sp)
 
-export(alphascore, ordermscore, ROCscore, alphafrontier.2d)
+export(alphafrontier.2d, alphafrontier.3d, alphascore, ordermfrontier.2d, ordermscore, ordermscore.boot, ROCscore)

@@ -15,7 +15,8 @@ ROCscore(xobs, yobs, type="output")
     \item{type}{a direction to choose among "output", "input" and "hyper"}
 }
 \details{
-A firm is super-efficient if it score is greater than 1.
+A firm is super-efficient if it score is greater than 1. By consulting this graph, we may choose the values of alpha and m which correspond to the desired degree of robustness, 
+i.e. the percentage of high performers of the population we want to exclude in our more realistic benchmarking comparison (see p.78 of Daraio and Simar, 2010). 
 }
 
 \value{
@@ -26,12 +27,17 @@ a \code{data.frame} object with:
 \item{f(m)}{the percentage of firms super-efficient}
 }
 
+\references{
+Daraio and Simar (2007),\emph{Advanced Robust and Nonparametric Methods in Efficiency Analysis}, Springer.
+}
+
 \author{ Abdelaati Daouia and Thibault Laurent }
 
 \examples{
 # 1st example
 data(spain)
-res.roc<-ROCscore(xobs=as.matrix(spain[,c(2,3,4)]),yobs=as.matrix(spain[,1]),type="output")
+res.roc<-ROCscore(xobs=as.matrix(spain[,c(2,3,4)]),yobs=as.matrix(spain[,1]),
+type="output")
 }
 
 \keyword{robust}

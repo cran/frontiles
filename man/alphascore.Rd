@@ -17,7 +17,7 @@ alphascore(xobs, yobs, xeval=xobs, yeval=yobs, alpha=0.95)
 \item{alpha}{a scalar}
 }
 \details{
-see p. 381 of Daouia and Simar
+A score between 0 and 1 means that DMU is inefficient. If DMU greater than 1, DMU is super-efficient.   
 }
 \value{
 a \code{data.frame} object with the  alpha-quantile efficiency score in:
@@ -30,18 +30,27 @@ Daouia, A. and L. Simar (2007), Nonparametric efficiency analysis: A multivariat
 }
 \author{ Abdelaati Daouia and Thibault Laurent }
 
+\seealso{
+\code{\link{alphafrontier.2d}}, \code{\link{ordermscore}}} 
+
 \examples{
 # 1st example
 data(spain)
-res.alqf<-alphascore(xobs=as.matrix(spain[,c(2,3,4)]),yobs=as.matrix(spain[,1]),alpha=0.8)
+res.alqf<-alphascore(xobs=as.matrix(spain[,c(2,3,4)]),yobs=as.matrix(spain[,1]),
+alpha=0.8)
 
 # 2nd example
 data(burposte)
-ind.samp<-sample(nrow(burposte),500)
-xobs=as.matrix(burposte[ind.samp[1:100],2])
-yobs=as.matrix(burposte[ind.samp[1:100],3])
-xeval=as.matrix(burposte[ind.samp[101:500],2])
-yeval=as.matrix(burposte[ind.samp[101:500],3])
+bur.samp<-burposte[which(burposte$xinput<50000),]
+ind.samp<-sample(nrow(bur.samp),500)
+xeval=as.matrix(bur.samp[ind.samp[1:100],2])
+yeval=as.matrix(bur.samp[ind.samp[1:100],3])
+xobs=as.matrix(bur.samp[ind.samp[101:500],2])
+yobs=as.matrix(bur.samp[ind.samp[101:500],3])
+
+alphafrontier.2d(xobs,yobs,alpha=0.95)
+points(xeval,yeval,pch=16,col='red')
+text(xeval,yeval,text=as.character(1:100),adj=2,cex=0.8)
 score.new.0.95<-alphascore(xobs,yobs,xeval,yeval,alpha=0.95)
 }
 
