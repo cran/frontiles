@@ -1,5 +1,5 @@
 \name{frontiles-package}
-\Rdversion{1.1}
+\Rdversion{1.3}
 \alias{frontiles-package}
 \alias{frontiles}
 \docType{package}
@@ -16,7 +16,7 @@ work was supported by the agence nationale de la recherche through the EPI proje
 Package: \tab frontiles\cr
 Type: \tab Package\cr
 Version: \tab 1.2\cr
-Date: \tab 2013-11-25\cr
+Date: \tab 2023-04-01\cr
 License: \tab GPL Vesion 2 or later\cr
 LazyLoad: \tab yes\cr
 }

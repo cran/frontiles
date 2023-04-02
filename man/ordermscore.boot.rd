@@ -47,24 +47,27 @@ Daouia et al. (2009), Regularization of Nonparametric Frontier Estimators, \emph
 \examples{
 # 1st example
 data(spain)
-score.orderm.b<-ordermscore.boot(xobs=as.matrix(spain[,c(2,3,4)]),yobs=as.matrix(spain[,1]))
+score.orderm.b <- ordermscore.boot(xobs = as.matrix(spain[, c(2, 3, 4)]),
+                    yobs = as.matrix(spain[, 1]))
 
 system.time(
-ordermscore.boot(xobs=as.matrix(spain[,c(2,3,4)]),yobs=as.matrix(spain[,1]))
+  ordermscore.boot(xobs = as.matrix(spain[, c(2, 3, 4)]), 
+                 yobs = as.matrix(spain[, 1]))
 )
 system.time(
-ordermscore(xobs=as.matrix(spain[,c(2,3,4)]),yobs=as.matrix(spain[,1]))
+  ordermscore(xobs = as.matrix(spain[, c(2, 3, 4)]),
+              yobs = as.matrix(spain[, 1]))
 )
 
 # 2nd example
+\donttest{
 data(burposte)
-ind.samp<-sample(nrow(burposte),500)
-xobs=as.matrix(burposte[ind.samp[1:100],2])
-yobs=as.matrix(burposte[ind.samp[1:100],3])
-xeval=as.matrix(burposte[ind.samp[101:500],2])
-yeval=as.matrix(burposte[ind.samp[101:500],3])
-
-# score.orderm.2.b<-ordermscore.boot(xobs,yobs,xeval,yeval)
+ind.samp <- sample(nrow(burposte), 500)
+xobs <- as.matrix(burposte[ind.samp[1:100], 2])
+yobs <- as.matrix(burposte[ind.samp[1:100], 3])
+xeval <- as.matrix(burposte[ind.samp[101:500], 2])
+yeval <- as.matrix(burposte[ind.samp[101:500], 3])
+score.orderm.2.b <- ordermscore.boot(xobs, yobs, xeval, yeval)
+ }
 }
-
 \keyword{multivariate}

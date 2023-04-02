@@ -36,8 +36,9 @@ Daraio and Simar (2007),\emph{Advanced Robust and Nonparametric Methods in Effic
 \examples{
 # 1st example
 data(spain)
-res.roc<-ROCscore(xobs=as.matrix(spain[,c(2,3,4)]),yobs=as.matrix(spain[,1]),
-type="output")
+res.roc <- ROCscore(xobs = as.matrix(spain[,c(2,3,4)]),
+                    yobs = as.matrix(spain[,1]),
+                    type = "output")
 }
 
 \keyword{robust}

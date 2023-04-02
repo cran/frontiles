@@ -1,9 +1,9 @@
-useDynLib(frontiles)
+useDynLib(frontiles, .registration = TRUE)
 
-import(classInt)
-import(colorspace)
 import(methods)
-import(rgl)
-import(sp)
-
+importFrom("colorspace", "heat_hcl")
+importFrom("rgl", "quads3d", "segments3d", "par3d", "aspect3d", "axes3d", "title3d")
+importFrom("graphics", "axis", "barplot", "layout", "legend", "lines", "mtext", "par", "points", "polygon")
+importFrom("stats", "median", "na.omit", "sd")
+     
 export(alphafrontier.2d, alphafrontier.3d, alphascore, ordermfrontier.2d, ordermscore, ordermscore.boot, ROCscore)
