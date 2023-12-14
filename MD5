@@ -1,4 +1,4 @@
-6c7c3f17b22369a3d7256005b960be85 *DESCRIPTION
+03b391728b575cb1bc397fcb643e76bf *DESCRIPTION
 8f6cb97c15a699a5008e91ae6abd3950 *NAMESPACE
 f7e4f93f3d181673b07727d9f2899936 *R/ROCscore.r
 e5c9db9189353d444a152e2618a2cf43 *R/alphafrontier.2d.r
@@ -7,11 +7,11 @@ db09ac0414e967d1126fd289fa2dc1f9 *R/alphafrontier.3d.r
 9b71e4e1da230d0a9eec0832d0fd16fa *R/ordermfrontier.2d.r
 6c0445ad3c13224f432fede959aa7779 *R/ordermscore.boot.r
 8d3233b56a4070abd54c8e5ee638f22d *R/ordermscore.r
-21528478b05fff070bc95542481c2cbe *build/vignette.rds
-83a50f44d4bfadfd253e8c353d3a5a23 *data/burposte.rda
-bbf4cc49eee6e4bcd22c366cba7f168e *data/spain.rda
+84b27adf97b2628bdc16774a9b57b5e0 *build/vignette.rds
+ccb1e0e42787e4f18c86ce2a7d65a007 *data/burposte.rda
+5024e85c0daafea2c2754f05673f5894 *data/spain.rda
 5497ab5c2951b89624321430574a7947 *inst/doc/frontiles1.R
-5f4dd915bb870c35ed842fe3df827757 *inst/doc/frontiles1.pdf
+8abf7070186396d509a507c1bd7e1b7a *inst/doc/frontiles1.pdf
 22f6441f14553277fc8974613578d363 *inst/doc/frontiles1.rnw
 d1c1e2ccbad8aa719fa35e94cdef1f1e *man/ROCscore.rd
 4e60005401e250c5c0262d084b064608 *man/alphafrontier.2d.rd
